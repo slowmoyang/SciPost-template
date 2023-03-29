@@ -1,0 +1,80 @@
+% =========================================================================
+% SciPost LaTeX template
+% Version 2021-08
+% =========================================================================
+\documentclass[submission, Phys]{SciPost}
+
+% Prevent all line breaks in inline equations.
+\binoppenalty=10000
+\relpenalty=10000
+
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\usepackage[bitstream-charter]{mathdesign}
+\urlstyle{sf}
+
+% Fix \cal and \mathcal characters look (so it's not the same as \mathscr)
+\DeclareSymbolFont{usualmathcal}{OMS}{cmsy}{m}{n}
+\DeclareSymbolFontAlphabet{\mathcal}{usualmathcal}
+
+\usepackage{import}
+
+\begin{document}
+
+\begin{center}{\Large \textbf{
+  Title
+}}\end{center}
+
+% TODO: write the author list here. Use first name (+ other initials) + surname format.
+% Separate subsequent authors by a comma, omit comma and use "and" for the last author.
+% Mark the corresponding author with a superscript star.
+\begin{center}
+corresponding Author\textsuperscript{1$\star$}
+\end{center}
+
+% TODO: write all affiliations here.
+% Format: institute, city, country
+\begin{center}
+{\bf 1} Affiliation1
+\\
+% TODO: provide email address of corresponding author
+${}^\star$ {\small \sf CorrespondingAuthor@email.address}
+\end{center}
+
+\begin{center}
+\today
+\end{center}
+
+\linenumbers
+
+\section*{Abstract}
+{\bf
+  \subimport{src/abstract}{main.tex}
+}
+
+% TODO: include a table of contents (optional)
+% Guideline: if your paper is longer that 6 pages, include a TOC
+% To remove the TOC, simply cut the following block
+\vspace{10pt}
+\noindent\rule{\textwidth}{1pt}
+\tableofcontents\thispagestyle{fancy}
+\noindent\rule{\textwidth}{1pt}
+\vspace{10pt}
+
+\subimport{src/introduction}{main.tex}
+\subimport{src/conclusion}{main.tex}
+\subimport{src/acknowledgements}{main.tex}
+
+% \begin{appendix}
+% \end{appendix}
+
+\bibliography{ref.bib}
+
+\nolinenumbers
+
+\end{document}
